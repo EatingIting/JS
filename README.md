@@ -58,7 +58,8 @@ HTML 문서에 출력 | document.write() | HTML 문서에 직접 텍스트 출�
     console.log("Hello World!"); // 세미콜론은 선택이지만, 웬만하면 찍는 습관!
   </script>
 </body> 
-</html>
+</html>```
+
 
 ![예시](./images/example.png)
 
