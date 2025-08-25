@@ -27,21 +27,19 @@ Node.js, React, Vue.js 등을 통해 백엔드, 앱, 게임 개발 등 다양한
 
 ## ✅ 공부하게 될 내용들
 
-📌 이미지 또는 커리큘럼 예시 위치
+📌 커리큘럼
 ![자바스크립트의 기본 구조](./images/curriculum.png)
 
-##✅ JS 적용 방법
-
-📌 JS 적용 위치 예시 이미지 삽입
-(./images/script-location.png)
-
-## 🖨️ 출력 방법
-출력 방법	사용 함수	설명	예시 코드	비고
-콘솔 출력	console.log()	개발자 도구의 콘솔에 메시지를 출력	console.log("Hello");	디버깅용으로 가장 많이 사용
-경고창 출력	alert()	팝업 알림 창으로 사용자에게 메시지 전달	alert("Warning!");	사용자 인터랙션용
-HTML 문서에 출력	document.write()	HTML 문서에 직접 텍스트 출력	document.write("Hello");	학습용, 실무에서는 거의 사용 안 함
+## ✅ JS 적용 방법
+![JS적용방법](./images/script-location.png)
 
 ---
+## 🖨️ 출력 방법
+| 출력 방법 | 사용 함수	| 설명	 | 예시 코드 | 비고 |
+|------------| ------------ | ----- | ----------- | -----|
+콘솔 출력 |	console.log() | 개발자 도구의 콘솔에 메시지를 출력 | console.log("Hello"); | 디버깅용으로 가장 많이 사용 |
+경고창 출력 | alert() | 팝업 알림 창으로 사용자에게 메시지 전달 | alert("Warning!"); | 사용자 인터랙션용 |
+HTML 문서에 출력 | document.write() | HTML 문서에 직접 텍스트 출력 | document.write("Hello"); | 학습용, 실무에서는 거의 사용 안 함 |
 
 출력은 위에서 아래 순서대로 실행됨
 
@@ -50,29 +48,35 @@ HTML 문서에 출력	document.write()	HTML 문서에 직접 텍스트 출력	do
 삽입 위치에 따라 실행 순서가 달라짐
 
 <!-- HTML 예시 -->
-<script src="ex01.js"></script>
-
-console.log("Hello World!"); // 세미콜론은 선택이지만, 웬만하면 찍는 습관!
-
-### ✅ 세미콜론은 선택이지만, 논리적인 오류 방지를 위해 습관적으로 사용하는 것이 좋음
+<pre> '''html 
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+    <script src="ex01.js"></script>
+  </head>
+  <body>
+	console.log("Hello World!"); // 세미콜론은 선택이지만, 웬만하면 찍는 습관!
+  </body>
+</html> ''' </pre>
 
 ---
 
 ## 🆔 식별자(이름 짓는 규칙)
 
-대소문자 구분
+* 대소문자 구분
 
-카멜 표기법 사용
+* 카멜 표기법 사용
 
-❌ phone_number
+* ❌ phone_number
 
-✅ phoneNumber
+* ✅ phoneNumber
 
-띄어쓰기 금지
+* 띄어쓰기 금지
 
-예약어(키워드) 사용 금지
+* 예약어(키워드) 사용 금지
 
-상수는 대문자 사용 (const API_KEY = 'abc123')
+* 상수는 대문자 사용 (const API_KEY = 'abc123')
 
 ---
 
@@ -99,17 +103,17 @@ const	ES6에서 도입 / 블록 스코프 / 재할당 불가 / 객체와 배열 
 
 기본 데이터 타입
 
-string – 문자열
+* string – 문자열  
 예: "hello", 'JavaScript'
 
-number – 숫자
+* number – 숫자  
 예: 10, 3.14
 
-boolean – 불리언
+* boolean – 불리언  
 예: true, false
 
-null – 값이 "없음"
+* null – 값이 "없음"
 
-undefined – 값이 할당되지 않음
+* undefined – 값이 할당되지 않음
 
-object – 객체 (배열, 함수 포함)
+* object – 객체 (배열, 함수 포함)
