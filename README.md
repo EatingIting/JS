@@ -19,10 +19,9 @@ Node.js, React, Vue.js 등을 통해 백엔드, 앱, 게임 개발 등 다양한
 ## 📚 자바스크립트의 버전
 
 2015년 기준으로 ES5 문법과 ES6 문법으로 나뉨
-
 해마다 새로운 버전이 발표되지만, 큰 변화는 ES5 → ES6 시점에서 일어남
-
 따라서 ES5와 ES6 구분하여 학습하는 것이 중요
+
 ---
 
 ## ✅ 공부하게 될 내용들
@@ -47,20 +46,19 @@ HTML 문서에 출력 | document.write() | HTML 문서에 직접 텍스트 출�
 
 삽입 위치에 따라 실행 순서가 달라짐
 
-<!-- HTML 예시 -->
-<pre> '''html 
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Document</title>
-    <script src="ex01.js"></script>
-  </head>
-  <body>
-	console.log("Hello World!"); // 세미콜론은 선택이지만, 웬만하면 찍는 습관!
-  </body>
-</html> ''' </pre>
+<pre> ```html 
+<!DOCTYPE html> 
+<html> 
+<head> 
+<title>Document</title> 
+<script src="ex01.js"></script> 
+</head> 
+<body> 
+<script> console.log("Hello World!"); // 세미콜론은 선택이지만, 웬만하면 찍는 습관! </script>
+</body> 
+</html> ``` </pre>
+![예시](./images/example.png)
 
----
 
 ## 🆔 식별자(이름 짓는 규칙)
 
@@ -81,7 +79,6 @@ HTML 문서에 출력 | document.write() | HTML 문서에 직접 텍스트 출�
 ---
 
 ## 📦 변수
-
 자바스크립트의 변수는 데이터를 저장하기 위한 "이름이 붙은 공간"
 
 하나의 값만 저장 가능
@@ -90,10 +87,10 @@ HTML 문서에 출력 | document.write() | HTML 문서에 직접 텍스트 출�
 
 값은 언제든 변경 가능
 
-키워드	특징
-var	ES5 이전부터 사용 / 함수 스코프 / 중복 선언 가능 / 호이스팅 발생 (초기화는 X)
-let	ES6에서 도입 / 블록 스코프 / 중복 선언 불가 / TDZ(Temporal Dead Zone) 발생
-const	ES6에서 도입 / 블록 스코프 / 재할당 불가 / 객체와 배열 내부 값은 변경 가능
+| 키워드 | 특징 |
+| var | ES5 이전부터 사용 / 함수 스코프 / 중복 선언 가능 / 호이스팅 발생 (초기화는 X) |
+| let | ES6에서 도입 / 블록 스코프 / 중복 선언 불가 / TDZ(Temporal Dead Zone) 발생 |
+| const | ES6에서 도입 / 블록 스코프 / 재할당 불가 / 객체와 배열 내부 값은 변경 가능 |
 
 ---
 
