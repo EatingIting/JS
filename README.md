@@ -46,17 +46,20 @@ HTML 문서에 출력 | document.write() | HTML 문서에 직접 텍스트 출�
 
 삽입 위치에 따라 실행 순서가 달라짐
 
-<pre> ```html 
+```html
 <!DOCTYPE html> 
 <html> 
 <head> 
-<title>Document</title> 
-<script src="ex01.js"></script> 
+  <title>Document</title> 
+  <script src="ex01.js"></script> 
 </head> 
 <body> 
-<script> console.log("Hello World!"); // 세미콜론은 선택이지만, 웬만하면 찍는 습관! </script>
+  <script> 
+    console.log("Hello World!"); // 세미콜론은 선택이지만, 웬만하면 찍는 습관!
+  </script>
 </body> 
-</html> ``` </pre>
+</html>
+
 ![예시](./images/example.png)
 
 
