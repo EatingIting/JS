@@ -19,3 +19,14 @@ let post = y++;
 console.log("y는: ",y);
 console.log("post는: ",post);
 
+//일반적인 ++, --의 표현
+let num = 1;
+num++;
+num++;
+++num;
+num--;
+--num;
+
+console.log(num);
+
+
