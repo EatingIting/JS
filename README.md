@@ -123,3 +123,117 @@ HTML 문서에 출력 | document.write() | HTML 문서에 직접 텍스트 출�
 
 * object – 객체 (배열, 함수 포함)  
 예: 배열은 대괄호 객체는 {}중괄호다.
+
+---
+## ✅ 형변환
+
+**형변환** 은 자바스크립트에서 **값의 데이터 타입을 다른 타입으로 바꾸는 것** 을 말합니다.
+
+예: 숫자를 문자열로, 문자열을 숫자로 바꾸는 등
+
+* 자동 형변환  
+``` JavaScript
+var result = "5" * 2;   // 문자열 "5"가 숫자 5로 바뀜
+console.log(result);    // 10
+
+var result2 = "5" + 2;  // 숫자 2가 문자열 "2"로 바뀜
+console.log(result2);   // "52"
+```
+
+* 명시적 형변환  
+``` JavaScript
+parseInt("10px");     // 10
+parseFloat("3.14");   // 3.14
+"" + 100; //문자열로 변함 
+```
+---
+
+## ✅ 연산자
+
+####  1. 산술 연산자 +, -, *, /, %, ++, --
+
+``` JavaScript
+var a = 10;
+var b = 3;
+
+console.log("덧셈:", a + b);       // 13
+console.log("뺄셈:", a - b);       // 7
+console.log("곱셈:", a * b);       // 30
+console.log("나눗셈:", a / b);     // 3.333...
+console.log("나머지:", a % b);     // 1
+
+a++;
+console.log("a 증가 (++):", a);    // 11
+
+b--;
+console.log("b 감소 (--):", b);    // 2
+```
+
+#### 2. 비교 연산자 ==, ===, !=, !==, <, >, <=, >=
+
+``` JavaScript
+var x = 5;
+var y = "5";
+
+console.log("== :", x == y);       // true (값만 비교)
+console.log("=== :", x === y);     // false (값 + 타입 비교)
+console.log("!= :", x != y);       // false
+console.log("!== :", x !== y);     // true
+console.log("< :", x < 10);        // true
+console.log("> :", x > 10);        // false
+console.log("<= :", x <= 5);       // true
+console.log(">= :", x >= 6);       // false
+```
+
+#### 3. 대입 연산자 =, +=, -=, *=, /=, %= 등
+
+``` JavaScript
+var score = 10;
+
+score += 5;   // score = score + 5
+console.log("+= :", score);       // 15
+
+score -= 3;
+console.log("-= :", score);       // 12
+
+score *= 2;
+console.log("*= :", score);       // 24
+
+score /= 4;
+console.log("/= :", score);       // 6
+
+score %= 4;
+console.log("%= :", score);       // 2
+```
+
+#### 4. 논리 연산자 &&, ||, !
+```JavaScript
+var isAdult = true;
+var hasID = false;
+
+console.log("AND (&&):", isAdult && hasID); // false
+console.log("OR (||):", isAdult || hasID);  // true
+console.log("NOT (!):", !isAdult);          // false
+```
+
+#### 5. 삼항 연산자 조건 ? 참 : 거짓
+``` JavaScript
+var age = 20;
+
+var result = (age >= 18) ? "성인" : "미성년자";
+console.log("삼항 연산자:", result); // 성인
+```
+
+---
+
+## 입력
+자바스크립트에서 **사용자 입력**을 받는 가장 간단한 방법은 **`prompt()`** 함수를 사용하는 것입니다.
+
+.js 파일에서는 사용할 수 없습니다.
+
+html에서만 확인할 수 있어요!
+
+```JavaScript
+let name = prompt("당신의 이름은?");
+console.log("안녕하세요, " + name + "님!");
+```
