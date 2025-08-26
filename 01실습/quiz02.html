@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            1. 사용자에게 바구니의 크기를 입력을 받는다.
+            2. 사과의 개수를 입력받는다.
+            3. 사과의 개수와, 필요한 바구니의 개수를 출력해준다.
+            ex) 바구니 크기 == 10, 사과 개수 == 151, 필요한 바구니 개수 16개
+            ex2) 바구니 크기 == 10, 사과 개수 == 150, 필요한 바구니 개수 15개.
+        */
+
+        let basketAmount = prompt("바구니 크기를 입력하세요.");
+        let appleAmount = prompt("사과의 개수를 입력하세요.");
+        let result = appleAmount % basketAmount >= 1 ? parseInt(appleAmount/basketAmount)+1 : appleAmount/basketAmount;
+        
+        // let result = appleAmount % basketAmount === 0 ? appleAmount/basketAmount : appleAmount % basketAmount >= 1 ? parseInt(appleAmount/basketAmount)+1 : appleAmount % basketAmount;
+
+        document.write("사과 개수 :"+appleAmount+" 바구니 크기 : "+basketAmount+" 필요한 바구니 개수 : "+result);    
+    </script>
+</body>
+</html>

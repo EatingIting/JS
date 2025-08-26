@@ -249,3 +249,39 @@ console.log("안녕하세요, " + name + "님!");
 - prompt()는 사용자에게 입력을 받을 수 있는 입력 창을 띄웁니다.
 - 입력된 값은 문자열(string)로 반환 됩니다.
 - 입력을 취소하면 null이 반환 됩니다.
+
+---
+
+# 제어문
+
+![제어문](./images/control.png)
+
+#### 조건문 if
+
+| 구문 | 설명 |
+| ---- | ---- |
+| if | 조건이 참이면 코드 블록 실행 |
+| else if | 앞의 조건이 거짓이고, 이 조건이 참이면 실행 |
+| else | 위 조건들이 모두 거짓이면 실행 |
+
+``` JavaScript
+var age = 20;
+
+if (age >= 20) {
+  console.log("성인입니다");
+} else {
+  console.log("어린이입니다");
+}
+```
+
+``` JavaScript
+var age = 20;
+
+if (age >= 20) {
+  console.log("성인입니다");
+} else if (age >= 13) {
+  console.log("청소년입니다");
+} else {
+  console.log("어린이입니다");
+}
+```
