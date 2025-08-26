@@ -285,3 +285,115 @@ if (age >= 20) {
   console.log("어린이입니다");
 }
 ```
+
+---
+
+## JavaScript 실습 예제
+
+### 1번 문제
+
+1. -5 ~ 5 사이의 랜덤한 정수를 생성한다.
+2. 이 값이 언제든 절대값으로 나오도록 삼항연산식을 세운다.
+
+``` JavaScript
+let number = 5;
+let result = number - (Math.random() * 11);
+console.log(result);
+
+result < 0 ? -result : result;
+
+console.log(parseInt(result));
+```
+
+``` PlainText
+출력결과
+2.0384263615177094
+2
+```
+
+### 2번 문제
+
+1. 1 ~ 10 사이의 랜덤한 정수를 생성한다.
+2. 이 숫자가 3의 배수라면 “3의 배수입니다.”, 아니라면 “3의 배수가 아닙니다.” 출력하기.
+
+``` JavaScript
+let number = parseInt(Math.random() * 10) + 1;
+console.log(number);
+
+let result = number % 3 === 0 ? "3의 배수입니다." : "3의 배수가 아닙니다.";
+console.log(result);
+```
+
+``` PlainText
+출력결과
+1
+3의 배수가 아닙니다.
+```
+
+### 3번 문제
+
+1. 사용자에게 바구니의 크기를 입력받는다.
+2. 사과의 개수를 입력받는다.
+3. 사과의 개수와 필요한 바구니의 개수를 출력해준다.
+
+ex) 바구니 크기 = 10, 사과 개수 = 151, 필요한 바구니 수 = 16개
+ex) 바구니 크기 = 10, 사과 개수 =150, 필요한 바구니 수 = 15개
+
+``` HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let basketAmount = prompt("바구니 크기를 입력하세요.");
+        let appleAmount = prompt("사과의 개수를 입력하세요.");
+        let result = appleAmount % basketAmount >= 1 ? parseInt(appleAmount/basketAmount)+1 : appleAmount/basketAmount;
+        
+        // let result = appleAmount % basketAmount === 0 ? appleAmount/basketAmount : appleAmount % basketAmount >= 1 ? parseInt(appleAmount/basketAmount)+1 : appleAmount % basketAmount;
+				// 중첩 삼항연산자로 품 (비효율적 + 머리아픔)
+				document.write("사과 개수 :"+appleAmount+" 바구니 크기 : "+basketAmount+" 필요한 바구니 개수 : "+result);    
+    </script>
+</body>
+</html>
+```
+
+### 4번 문제
+
+1. 키를 실수형으로 입력받는다.
+2. 나이를 정수형으로 입력받는다.
+3. 키가 140 이상이고, 나이가 8세 이상이면 자이로드롭을 탈 수 있다.
+4. 둘 중 하나라도 만족하지 못하면 놀이기구를 탈 수 없다.
+
+``` HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let height = parseFloat(prompt("당신의 키를 적어주세요."));
+        let age = parseInt(prompt("당신의 나이를 적어주세요."));
+
+        if(height >= 140 && age >= 8) {
+            document.write("자이로드롭 탑승 가능합니다.");
+        } else {
+            document.write("놀이기구 탑승이 불가능합니다.");
+        }
+    </script>
+</body>
+</html>
+```
+``` PlainText
+출력결과
+height에 140, age에 7을 넣으면 else문 동작
+height에 139, age에 8을 넣어도 else문 동작
+height에 140, age에 8을 넣으면 if문 동작
+height 140이상 age 8이상이면 if문 동작 둘중 하나라도 만족하지 못하면 else문이 동작함.
+```
