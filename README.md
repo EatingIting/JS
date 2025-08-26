@@ -58,7 +58,7 @@ HTML 문서에 출력 | document.write() | HTML 문서에 직접 텍스트 출�
     console.log("Hello World!"); // 세미콜론은 선택이지만, 웬만하면 찍는 습관!
   </script>
 </body> 
-</html>```
+</html> ```
 
 
 ![예시](./images/example.png)
@@ -105,16 +105,19 @@ HTML 문서에 출력 | document.write() | HTML 문서에 직접 텍스트 출�
 기본 데이터 타입
 
 * string – 문자열  
-예: "hello", 'JavaScript'
+예: "hello", 'JavaScript' (문자들이 연결된 형태)
 
 * number – 숫자  
-예: 10, 3.14
+예: 10, 3.14 (실수, 정수 모두 숫자타입)
 
 * boolean – 불리언  
-예: true, false
+예: true, false (참,거짓만 저장 가능)
 
 * null – 값이 "없음"
 
 * undefined – 값이 할당되지 않음
+
+* array - 배열
+예: [1,2,3,4], ["홍길동","이순신","유관순"]
 
 * object – 객체 (배열, 함수 포함)
