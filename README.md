@@ -132,7 +132,7 @@ HTML 문서에 출력 | document.write() | HTML 문서에 직접 텍스트 출�
 예: 숫자를 문자열로, 문자열을 숫자로 바꾸는 등
 
 * 자동 형변환  
-``` JavaScript
+```JavaScript
 var result = "5" * 2;   // 문자열 "5"가 숫자 5로 바뀜
 console.log(result);    // 10
 
@@ -141,8 +141,8 @@ console.log(result2);   // "52"
 ```
 
 * 명시적 형변환  
-``` JavaScript
-parseInt("10px");     // 10
+```JavaScript
+parseInt("10");     // 10
 parseFloat("3.14");   // 3.14
 "" + 100; //문자열로 변함 
 ```
@@ -152,7 +152,7 @@ parseFloat("3.14");   // 3.14
 
 ####  1. 산술 연산자 +, -, *, /, %, ++, --
 
-``` JavaScript
+```JavaScript
 var a = 10;
 var b = 3;
 
@@ -171,7 +171,7 @@ console.log("b 감소 (--):", b);    // 2
 
 #### 2. 비교 연산자 ==, ===, !=, !==, <, >, <=, >=
 
-``` JavaScript
+```JavaScript
 var x = 5;
 var y = "5";
 
@@ -187,7 +187,7 @@ console.log(">= :", x >= 6);       // false
 
 #### 3. 대입 연산자 =, +=, -=, *=, /=, %= 등
 
-``` JavaScript
+```JavaScript
 var score = 10;
 
 score += 5;   // score = score + 5
@@ -217,7 +217,7 @@ console.log("NOT (!):", !isAdult);          // false
 ```
 
 #### 5. 삼항 연산자 조건 ? 참 : 거짓
-``` JavaScript
+```JavaScript
 var age = 20;
 
 var result = (age >= 18) ? "성인" : "미성년자";
@@ -238,6 +238,6 @@ let name = prompt("당신의 이름은?");
 console.log("안녕하세요, " + name + "님!");
 ```
 
-* prompt()는 사용자에게 입력을 받을 수 있는 입력 창을 띄웁니다.
-* 입력된 값은 문자열(string)로 반환 됩니다.
-* 입력을 취소하면 null이 반환 됩니다.
+- prompt()는 사용자에게 입력을 받을 수 있는 입력 창을 띄웁니다.
+- 입력된 값은 문자열(string)로 반환 됩니다.
+- 입력을 취소하면 null이 반환 됩니다.
