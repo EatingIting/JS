@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let score = parseInt(prompt("점수를 입력하세요."));
+        //이 점수에 따라서 학점을 부여한다.
+        let grade = '';
+
+        if(score >= 90) {
+            grade = 'A학점';
+        } else if(score >= 80) {
+            grade = 'B학점';
+        } else if(score >= 70) {
+            grade = 'C학점';
+        } else {
+            grade = 'F학점 (재수강 대상입니다.)'
+        }
+        document.write(grade);
+
+        //if문은 중첩도 가능하다. 중첩을 할땐 보기좋게 들여쓰기를 해서 쓰는게 좋다.
+
+        if(score >= 90) {
+            if(score >= 95){
+                grade = 'A+학점';
+            } else {
+                grade = 'A학점';
+            }
+        } else if(score >= 80) {
+            grade = 'B학점';
+        } else if(score >= 70) {
+            grade = 'C학점';
+        } else {
+            grade = 'F학점 (재수강 대상입니다.)'
+        }
+        document.write(grade);
+    </script>
+</body>
+</html>

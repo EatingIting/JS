@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      /* 
+        1. 사용자에게 수를 하나 입력받는다.
+        2. 이 수가 찍수인지 홀수인지 0인지, 음수인지 구분해서 출력하는 프로그램 코드를 작성해본다.
+      */  
+        let number = parseInt(prompt("숫자를 입력해주세요."));
+        let result  = '';
+
+        if(number === 0) {
+            result = '입력하신 숫자는 0 입니다.<br>';
+        } else if(number < 0) {
+            result = '입력하신 ' + number + '은(는) 음수입니다.<br>';
+        } else if (isNaN(number)) {
+            result = '숫자를 입력해주세요.<br>';
+        } else if(number % 2 == 0) {
+            result = '입력하신 ' + number + ' 은(는) 짝수입니다.<br>';
+        } else {
+            result = '입력하신 ' + number + '은(는) 홀수입니다.<br>';
+        }
+        document.write(result); //if문의 순서를 잘 생각해야한다. 짝수와 홀수를 구분하는 if문을 먼저 썼다면, -2나 -3을 입력했을때, 음수가 아닌 짝수나 홀수가 나오게 된다.
+
+        document.write(number === 0 ? '입력하신 숫자는 0 입니다.' : number < 0 ? '입력하신 ' + number + '은(는) 음수입니다.' : isNaN(number) ? '숫자를 입력해주세요.' : number % 2 === 0 ? '입력하신 ' + number + '은(는) 짝수입니다.' : '입력하신 ' + number + '은(는) 홀수입니다.');
+    </script>
+</body>
+</html>

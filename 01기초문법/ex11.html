@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let point = parseInt(prompt("점수를 입력하세요."));
+        switch (parseInt(point / 10)) { //변수(정수, 문자열) 또는 연산식도 들어간다.
+            case 9:
+                if(point >= 95) {
+                    document.write("A+학점");
+                } else {
+                    document.write("A학점");
+                }
+                break; //switch case문을 탈출한다.
+            case 8:
+                document.write('B학점');
+                break;
+            case 7:
+                document.write('C학점');
+                break;    
+            default:
+                document.write('재수강입니다.');
+                break;
+        }
+    </script>
+</body>
+</html>

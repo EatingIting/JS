@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //두 수를 입력받아서, 큰 수와 작은수를 출력해주면 된다.
+        //단 만약 같은수라면 "같은 수 입니다."를 출력한다.
+        let number1 = parseInt(prompt("첫번째 숫자를 입력해주세요."));
+        let number2 = parseInt(prompt("두번째 숫자를 입력해주세요."));
+        let result = '';
+
+        if(number1 === number2) {
+            result = '첫번째 입력하신 값 '+number1+'은 두번째 입력하신 값 '+number2+'와 같습니다.';
+        } else if(number1 > number2) {
+            result = '첫번째 입력하신 값 '+number1+'이(가) 두번째 입력하신 '+number2+' 보다 큽니다.'
+        } else {
+            result = '첫번째 입력하신 값 '+number1+'이(가) 두번째 입력하신 '+number2+' 보다 작습니다.'
+        }
+        document.write(result);
+    </script>
+</body>
+</html>

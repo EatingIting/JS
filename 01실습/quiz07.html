@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //구구단을 입력받아, 입력받은 구구단을 출력해주세요.
+        let number = parseInt(prompt("구구단의 단수를 입력해주세요."));
+        let i = 1;
+        document.write("<h1>"+number+ "단</h1>");
+        while(i<=9) {
+                //document.write(number + ' x ' + i + ' = ' + number * i + '<br>');
+                document.write(`${number} x ${i} = ${number*i}<br>`); //백틱 - ES6에서 생긴 문법 (+와 , 없이 바로 문자열 사용 가능, 변수 출력은 ${} 형식으로 출력한다.)
+                i++;
+        }
+        
+    </script>
+</body>
+</html>
