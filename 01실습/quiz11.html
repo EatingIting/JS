@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 더하기 문제 맞추기
+         1 ~ 100까지 랜덤한 덧셈 문제를 출제합니다.
+         사용자는 정답을 입력합니다.
+         0을 입력하면 프로그램이 종료됩니다.
+         정답횟수, 오답횟수를 화면에 출력해주세요. 
+    -->
+
+    <script>
+        let answer = 0;
+        let notAnswer = 0;
+        while(true) {
+            let number1 = parseInt(Math.random() * 100) + 1;
+            let number2 = parseInt(Math.random() * 100) + 1;
+            let result = number1 + number2;
+            let result2 = parseInt(prompt(`${number1} + ${number2} = ?\n문제를 그만푸시려면 0을 입력하세요.`));
+            if(result2 === result) {
+                alert("정답입니다.");
+                answer++;
+            } else if(result2 === 0) {
+                document.write(`<h1>사칙연산 게임</h1> <p style="font-weight: bold;">덧셈의 문제를 풀어보세요!</p> <br>정답 : ${answer}회<br>오답 : ${notAnswer}회`);
+                break;
+            } else {
+                alert("오답입니다.");
+                notAnswer++;
+            }
+        }
+    </script>
+
+</body>
+</html>

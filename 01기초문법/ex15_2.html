@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /* 
+        무한반복문
+        - 정확히 횟수를 모를 때 주로 사용합니다.
+        - while(true) 문장으로 만들어서 사용합니다.
+        - 특정조건 하에 탈출하도록 처리를 합니다.
+    */
+
+    while(true) {
+        let answer = prompt("3 x 6 = ?");
+        let result = parseInt(answer);
+        if(result === 18) { //정답이 나오면 무한반복문을 break구문으로 빠져나가게 됨.
+            alert("정답입니다.");
+            break;
+        } else {
+            alert("오답입니다.");
+        }
+    }
+
+    </script>
+    
+</body>
+</html>
