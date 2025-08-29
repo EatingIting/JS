@@ -41,3 +41,13 @@ if (arr.indexOf('a') != -1) { //배열에 'a'가 존재하지 않지 않는다�
 if(arr.includes('a')) { //배열에 'a'가 있다면
     console.log(`이 배열에서 'a'는 존재합니다. ${arr.indexOf('a')}번째에 존재함`);    
 }
+
+//배열의 병합(합치기)
+
+let arr3 = [1,2,3];
+let arr4 = [4,5,6];
+
+let result = arr3.concat(arr4); //두 배열을 합친 새로운 배열을 반환
+console.log(result); //[1,2,3,4,5,6]
+
+//배열의 오름차순 정렬
