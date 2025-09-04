@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>css선택자 문법으로 엘리먼트 선택</h3>
+
+    <ul class="box">
+        <li>안녕하셔</li>
+        <li>hello</li>
+        <li>니하오</li>
+    </ul>
+    <script>
+        //최초로 발견되는 태그 1개 선택
+        let li = document.querySelector(".box > li");
+        console.log(li);
+        
+        let lis = document.querySelectorAll(".box > li");
+        console.log(lis);
+        
+    </script>
+    <hr>
+
+    <h3>DOM탐색을 선택적으로 하는 방법</h3>
+
+    <div class="wrap">
+        <select class="sel">
+            <option>사과</option>
+            <option>딸기</option>
+            <option>멜론</option>
+        </select>
+    </div>
+
+    <script>
+        //wrap태그에서만 option태그를 재탐색
+        let wrap = document.querySelector(".wrap");
+        console.log(wrap);
+        console.log(wrap.querySelectorAll('.sel > option'));
+        
+    </script>
+</body>
+</html>

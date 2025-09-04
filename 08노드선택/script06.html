@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h3>엘리먼트 클래스속성 다루기</h3>
+
+    <button type="button" id="btn">클래스변경하기</button>
+
+    <div class="box" id="targetBox">
+        내용
+    </div>
+
+    <script>
+        let btn = document.getElementById("btn"); //버튼
+        //클래스를 다루는 버튼같은 경우, 계속 클래스명이 변경되기 때문에 id속성을 이용해서 처리
+        let box = document.getElementById("targetBox"); //박스  
+
+        btn.onclick = function() {
+            //box.className = "changeBox";
+            if(box.className === "box") {
+                box.className = "changeBox";
+            } else {
+                box.className = "box";
+            }
+        }
+    </script>
+
+    <style>
+        .content {
+            border: 1px solid #777;
+            height: 100px;
+            width: 100px;
+            transition: all 0.5s ease-in-out; /* 에니메이션 효과 */ 
+        }
+        .content.active {
+            background-color: yellow;
+            border: 1px solid green;
+            font-size: 20px;
+            transition: all 0.5s ease-in-out;
+        }
+    </style>
+
+    <hr>
+
+    <h3>클래스 속성을 추가, 삭제하기</h3>
+    <button type="button" id="add">추가하기</button>
+    <button type="button" id="remove">삭제하기</button>
+    <button type="button" id="toggle">토글하기</button>
+
+    <div class="content" id="content">
+        내용......
+        
+    </div>
+
+    <script>
+        let add = document.getElementById("add");
+        let remove = document.getElementById("remove");
+        let toggle = document.getElementById("toggle");
+        let content = document.getElementById("content");
+
+        add.addEventListener("click", function() {
+            
+            //console.log( content.classList ); //클래스 이름을 배열로 반환
+            //add() - 클래스추가
+            //remove() - 클래스제거
+            //contains() - 포함되어있으면 true, 아니면 false
+            //toggle() - toggle처럼 동작함
+            content.classList.add("active");
+        });
+
+        remove.addEventListener("click", function() {
+            content.classList.remove("active");
+        })
+
+        toggle.addEventListener("click", function() {
+            content.classList.toggle("active");
+        })
+
+
+    </script>
+
+
+
+</body>
+</html>

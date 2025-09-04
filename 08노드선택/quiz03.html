@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        input { outline: none; }
+    </style>
+    <p>아이디나 비밀번호가 변경될 때 마다 다음을 구현하세요.<br>힌트: 이벤트 input or change</p>
+
+    아이디 : <input type="text" id="uID">
+    <!-- <p id="uID_hint"></p> -->
+    <div id = "uID_hint" style="height: 25px;"> </div>
+    비밀번호 : <input type="text" id="uPW">
+    <!-- <p id="uPW_hint"></p> -->
+    <div id ="uPW_hint" style="height: 25px;"> </div>
+
+    <script>
+        let uid = document.getElementById("uID");
+        let upw = document.getElementById("uPW");
+
+        let idHint = document.getElementById("uID_hint");
+        let pwHint = document.getElementById("uPW_hint");
+
+        uid.addEventListener("input", () => {
+            if(uid.value.length < 4) {
+                idHint.style.visibility = "visible";
+                uid.style.border = "2px solid red";
+                idHint.innerHTML = "아이디는 4글자 이상이어야 합니다.";
+            } else {
+                idHint.style.visibility = "hidden";
+                uid.style.border = "2px solid green";
+            }
+            if(uid.value.length === 0 ) {
+                idHint.style.visibility="hidden";
+                uid.removeAttribute("style");
+            }
+        });
+
+        upw.addEventListener("input", () => {
+            if(upw.value.length < 9) {
+                pwHint.style.visibility = "visible";
+                upw.style.border = "2px solid red";
+                pwHint.innerHTML = "비밀번호는 9글자 이상이어야 합니다.";
+            } else {
+                pwHint.style.visibility = "hidden";
+                upw.style.border = "2px solid green";
+            }
+            if(upw.value.length === 0) {
+                pwHint.style.visibility="hidden";
+                upw.removeAttribute("style");
+            }
+        });
+    </script>
+</body>
+</html>

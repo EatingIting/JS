@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <h3>엘리멘트의 CSS속성 변경하기</h3>
+    <div>
+        <img src="img/1.jpg" alt="대표이미지" width="200px" class="profile">
+        <select class="sel">
+            <option value="1.jpg">봄</option>
+            <option value="2.jpg">여름</option>
+            <option value="3.jpg">가을</option>
+            <option value="4.jpg">겨울</option>
+        </select>
+    </div>
+
+    <input type="color" name="" class="color">
+
+    <button type="button" id="profile-btn">이미지 변경하기</button>
+
+    <script>
+        let profileBtn = document.getElementById("profile-btn");
+        let img = document.querySelector(".profile");
+        let sel = document.querySelector(".sel");
+        let color = document.querySelector(".color");
+
+        profileBtn.onclick = function() {
+            img.src = `img/`+sel.value;
+            //css속성을 변경
+            img.style.border = "3px solid " + color.value;
+        };
+    </script>
+</body>
+</html>

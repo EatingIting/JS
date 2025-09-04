@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>자바스크립트 카운트 (value 속성을 이용해서 카운트처리하세요)</h2>
+
+    <input type="number" id="numberBox" value="0">
+    <button type="button" id="plusBtn">+</button>
+    <button type="button" id="minusBtn">-</button>
+
+    <script>
+        let plusBtn = document.getElementById("plusBtn");
+        let minusBtn = document.getElementById("minusBtn");
+        let numberBox = document.getElementById("numberBox");
+        
+        plusBtn.addEventListener("click", () => {
+            numberBox.value++;
+        });
+
+        minusBtn.addEventListener("click", () => {
+            numberBox.value <= 0 ? alert("0보다 작아질 수 없습니다.") : numberBox.value--;
+        })
+
+    </script>
+</body>
+</html>

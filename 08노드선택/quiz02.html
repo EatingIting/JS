@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    좌석:
+    <input type="checkbox" name="seat" value="1">1
+    <input type="checkbox" name="seat" value="2">2
+    <input type="checkbox" name="seat" value="3">3
+    <input type="checkbox" name="seat" value="4">4
+    <input type="checkbox" name="seat" value="5">5
+    <input type="checkbox" name="seat" value="6">6
+    <input type="checkbox" name="seat" value="7">7
+    <input type="checkbox" name="seat" value="8">8
+    <input type="checkbox" name="seat" value="9">9
+    <br>
+    <button type="button" id = "reserve">예약하기</button>
+    <br>
+    예약번호 : <div class="result"></div>
+    <script>
+        //checked속성으로 체크가 됐는지 안됐는지 확인 가능
+        let btn = document.getElementById("reserve");
+        let result = document.querySelector('.result');
+        let seat = document.getElementsByName("seat");
+        // let seat = document.querySelectorAll('input[name=seat]');
+
+        btn.addEventListener("click", function() {
+            //1. 체크된 좌석증 저장할 수 있는 [] 생성
+            //2. 반복문을 이용해서 체크여부를 확인하고, 체크되어있으면 배열에 추가
+            //3. 반복문을 다 돌고 나와서, 체크가 되어있었다면 result태그에 출력
+            let seatarr = [];
+
+            for(let i of seat) {
+                if(i.checked) {
+                    seatarr.push(i.value+"번");
+                }
+            }
+            if(seatarr.length === 0) {
+                alert("좌석을 필수로 체크해야 합니다.");
+            } else {
+                result.innerHTML = seatarr;
+            }
+        });
+        
+    </script>
+</body>
+</html>

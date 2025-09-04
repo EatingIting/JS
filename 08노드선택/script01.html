@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Element 선택</h3>
+    <div class="box">box1</div>
+    <div class="box">box2</div>
+    <div class="box">box3</div>
+    <div class="box">box4</div>
+
+    <form action="">
+        <input type="checkbox" name="fruit">사과
+        <input type="checkbox" name="fruit">수박
+        <input type="checkbox" name="fruit">멜론
+    </form>
+
+    <ul>
+        <li>홍길동</li>
+        <li>이순신</li>
+        <li>김철수</li>
+    </ul>
+    <ul>
+        <li>영숙</li>
+    </ul>
+
+    <script>
+        //클래스명이 box인 태그를 전부 얻어서 배열타입으로 반환
+        let arr = document.getElementsByClassName("box");
+        console.log(arr);
+        arr[0].onclick = function() {
+            console.log("첫번째 박스에 이벤트 동작함");
+        }
+
+        //속성명 name이 fruit인 태그를 전부 얻어서 배열타입으로 반환
+        let fruit = document.getElementsByName("fruit");
+        for(let item of fruit) {
+            item.onclick = function() {
+                console.log("체크박스에 모두 이벤트 등록됨");
+            }
+        }
+        
+        //태그명칭으로 전부 얻어서 배열타입으로 반환
+        let lis = document.getElementsByTagName("li");
+        console.log(lis);
+        
+    </script>
+</body>
+</html>

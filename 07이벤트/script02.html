@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>기본 이벤트</h3>
+
+    <button type="button" id="my-btn">기본이벤트 입니당.</button>
+
+    <script>
+        //1. 버튼태그에 이벤트를 걸기 위해서, 버튼 태그를 얻음
+        let btn = document.getElementById("my-btn");
+
+        //2. 버튼태그 onclick 속성에 함수를 대입
+        btn.onclick = () => {alert(`이벤트 동작함`);}
+    </script>
+</body>
+</html>

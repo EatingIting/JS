@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>엘리먼트 추가하기</h3>
+
+    <div id = "content"></div>
+    <button type="button" id="btn1">innerHTML로 추가하기</button>
+    <hr>
+    <button type="button" id="btn2">createElement로 추가하기</button>
+    <ul id="box">
+
+    </ul>
+    
+
+    <script>
+        //innerHTML은 버튼을 누를때마다 계속 생성해주진 않는다.
+        let content = document.getElementById("content");
+        let btn1 = document.getElementById("btn1");
+
+        btn1.onclick = function() {
+            let str = `
+            <h3>추가됨</h3>
+            <a href = "#">이동</a>`;
+            content.innerHTML = str;
+        };
+
+        //appendChild는 버튼을 누를때마다 계속 생성해준다.
+        let box = document.getElementById("box");
+        let btn2 = document.getElementById("btn2");
+        box.style.listStyle = "none";
+
+        btn2.onclick = function() {
+            let li = document.createElement("li");
+            let a = document.createElement("a");
+
+            a.href = "https://google.com";
+            a.innerHTML = "구글로 이동하기";
+            //li의 자식으로 a태그를 넣어준다.
+            li.appendChild(a);
+
+            box.appendChild(li);
+        };
+    </script>
+</body>
+</html>

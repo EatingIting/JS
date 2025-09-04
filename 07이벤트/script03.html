@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>표준이벤트</h3>
+
+    <button type="button" id="btn">표준이벤트</button>
+
+    <script>
+        let btn = document.getElementById("btn");
+
+        // btn.addEventListener("이벤트종류",실행시킬함수); - on키워드 제외
+        btn.addEventListener("click", sayHello);
+        //addEventListener 방식은 동일한 이벤트에 대해서 여러개 등록이 가능. - 가장 선호하는 방식
+        function sayHello() {
+            alert("Hello World1");
+        }
+
+        btn.addEventListener("click", () => {alert(`Hello World2`);});
+    </script>
+</body>
+</html>

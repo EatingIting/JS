@@ -6,14 +6,12 @@
 
 let user = {name: "", addr: "서울시"};
 
-let registUser = (user) => {
-    let name = user.name;
+let registUser = (obj) => {
     try {
-        if(name.length < 2 || !name) {
+        if(obj.name.length <= 2 || obj.name === null) {
             throw new Error("사용자의 이름을 정확하게 적어주세요.");
-        } else {
-            return name;
-        }
+        } 
+        return obj.name;
     } catch (error) {
         console.log(error.message);
         return null;
