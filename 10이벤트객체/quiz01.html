@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li, ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            display: inline-block;
+        }
+        ul {
+            margin-left: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h3>다중이벤트 처리</h3>
+
+    <ul id="box">
+        <li class="image"><img src="img/1.jpg" alt="1" width="100px"></li>
+        <li class="image"><img src="img/2.jpg" alt="2" width="100px"></li>
+        <li class="image"><img src="img/3.jpg" alt="3" width="100px"></li>
+        <li class="image"><img src="img/4.jpg" alt="4" width="100px"></li>
+    </ul>
+
+    결과: 
+    <div class="result">
+        <img src="img/1.jpg" alt="결과" width="400">
+    </div>
+
+    <script>
+        let box = document.getElementById("box");
+        let images = document.querySelectorAll(".image");
+        let result = document.querySelector(".result > img");
+        box.addEventListener("click", (e) => {
+            if(e.target.tagName !== "IMG") return false;
+            result.src=e.target.src;
+        });
+    </script>
+</body>
+</html>

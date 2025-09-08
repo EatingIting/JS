@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        table {border-spacing: 0; border-collapse: collapse;}
+        thead th, tbody td {
+            border: 1px solid black;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <table >
+        <thead>
+            <tr>
+                <th>이동</th>
+                <th>번호</th>
+                <th>이름</th>
+                <th>내용</th>
+                <th>날짜</th>
+            </tr>
+
+        </thead>
+
+        <tbody class="table">
+        <tr>
+            <td><button onclick="down(this)">↓</button><button onclick="up(this)">↑</button></td>
+            <td>1</td>
+            <td>홍길자</td>
+            <td>안녕!</td>
+            <td>2019-01-01</td>
+        </tr>
+        <tr>
+            <td><button onclick="down(this)">↓</button><button onclick="up(this)">↑</button></td>
+            <td>2</td>
+            <td>이순신</td>
+            <td>반가워</td>
+            <td>2019-02-01</td>
+        </tr>
+        <tr>
+            <td><button onclick="down(this)">↓</button><button onclick="up(this)">↑</button></td>
+            <td>3</td>
+            <td>이순신</td>
+            <td>반가워</td>
+            <td>2019-02-01</td>
+        </tr>
+        <tr>
+            <td><button onclick="down(this)">↓</button><button onclick="up(this)">↑</button></td>
+            <td>4</td>
+            <td>이순신</td>
+            <td>반가워</td>
+            <td>2019-02-01</td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="down(this)">↓</button>
+                <button onclick="up(this)">↑</button>
+            </td>
+            <td>5</td>
+            <td>이순신</td>
+            <td>반가워</td>
+            <td>2019-02-01</td>
+        </tr>
+        </tbody>
+    </table>
+    <script>
+        function down(tag) {
+            //tag는 클릭한 자기 자신
+
+            //부모노드 탐색
+            // console.dir(tag);
+            // console.log(tag.parentElement); //정확히 태그만 선택
+            // console.log(tag.parentNode); //텍스트, 태그, 공백 등등 모두 선택
+
+            // console.log(tag.closest("tr"));
+            // console.log(tag.closest(".table"));
+            
+            
+            
+            //형제노드 탐색
+            // console.log(tag.previousElementSibling);
+            // console.log(tag.nextElementSibling);
+
+            //자식노드 탐색
+            // let tr = tag.parentElement.parentElement;
+            // console.log(tr.children); //자식들
+            // console.log(tr.firstElementChild); //첫째
+            // console.log(tr.lastElementChild); //막내
+            
+            let table = document.querySelector('.table');
+            //기준노드 => tr
+            let current = tag.closest("tr");
+            //다음노드 => current 바로 아래 tr
+            let next = current.nextElementSibling;
+            //부모.insertBefore("삽입노드","기준노드");
+            if(next === null) {
+                alert("마지막행 입니다.");
+                return false;
+            }
+            table.insertBefore(next, current);
+        }
+
+        function up(tag) {
+            let table = document.querySelector(".table");
+            let current = tag.closest("tr");
+            let previous = current.previousElementSibling;
+
+            if(previous === null) {
+                alert("처음행 입니다.");
+                return false;
+            }
+            table.insertBefore(current, previous);
+        }
+    </script>
+</body>
+</html>

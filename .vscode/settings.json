@@ -1,3 +1,4 @@
 {
-    "livePreview.defaultPreviewPath": "/07이벤트/script02.html"
+    "livePreview.defaultPreviewPath": "/07이벤트/script02.html",
+    "liveServer.settings.port": 5501
 }

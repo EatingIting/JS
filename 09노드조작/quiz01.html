@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {list-style: none;}
+
+        h2 {
+            text-align: center;
+        }
+        form {
+            text-align: center;
+        }
+        #name {
+            margin: 0px;
+        }
+        .nameTag {
+            margin: 10px;
+        }
+        #todo {
+            margin-top: 0px;
+        }
+        .red-btn{
+            border: none;
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h2>할일 목록 만들기</h2>
+    <hr>
+    <form>
+        <input type="text" id="uid" placeholder ="당신의 이름을 적어주세요.">
+        <button type="button" id="nameBtn" onclick= this.remove()>확인</button>
+        <div class = "nameTag" style="visibility: hidden;"></div>
+
+        <input type="text" id="todo" placeholder ="당신의 할일을 적어주세요.">
+        <button type="button" id="todoBtn">확인</button>
+
+        <ul id="todoList">
+
+        </ul>
+    </form>
+    <script>
+        let uid = document.getElementById("uid");
+        let nameBtn = document.getElementById("nameBtn");
+    
+        let todo = document.getElementById("todo");
+        let todoBtn = document.getElementById("todoBtn");
+
+        let nameTag = document.querySelector(".nameTag");
+        let todoList = document.getElementById("todoList");
+
+        let doubleclick = document.querySelector(".double");
+
+        nameBtn.addEventListener("click", () => {
+            nameTag.style.visibility = "visible";
+            nameTag.textContent = uid.value + "님 안녕하세요.";
+            uid.style.display = "none";
+            nameBtn.style.display = "none";
+        });
+
+        todoBtn.addEventListener("click", () => {
+            let li = document.createElement("li");
+            let text = todo.value;
+            li.textContent = text;
+            todoList.appendChild(li);
+            
+
+            let button = document.createElement("button");
+            button.textContent = "X떠블클릭";
+            button.className = "red-btn";
+            li.appendChild(button);
+            
+            todo.value = null;
+        });
+    </script>
+</body>
+</html>

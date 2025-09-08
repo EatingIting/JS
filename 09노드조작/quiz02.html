@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {list-style: none;}
+
+        h2 {
+            text-align: center;
+        }
+        form {
+            text-align: center;
+        }
+        #name {
+            margin: 0px;
+        }
+        .nameTag {
+            margin: 10px;
+        }
+        #todo {
+            margin-top: 0px;
+        }
+        .red-btn{
+            border: none;
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h2>할일 삭제와 이동기능</h2>
+    <h2>confirm('메시지')확인클릭시 true반환, 취소클릭시 false반환</h2>
+    <hr>
+    <h2>할일 목록 만들기</h2>
+    <form>
+        <input type="text" id="uid" placeholder ="당신의 이름을 적어주세요.">
+        <button type="button" id="nameBtn">확인</button>
+        <div class = "nameTag" style="visibility: hidden;"></div>
+
+        <input type="text" id="todo" placeholder ="당신의 할일을 적어주세요.">
+        <button type="button" id="todoBtn">확인</button>
+
+        <ul id="todoList">
+
+        </ul>
+    </form>
+    <script>
+        let uid = document.getElementById("uid");
+        let nameBtn = document.getElementById("nameBtn");
+    
+        let todo = document.getElementById("todo");
+        let todoBtn = document.getElementById("todoBtn");
+
+        let nameTag = document.querySelector(".nameTag");
+        let todoList = document.getElementById("todoList");
+
+        let doubleclick = document.querySelector(".double");
+
+        nameBtn.addEventListener("click", () => {
+            nameTag.style.visibility = "visible";
+            nameTag.textContent = uid.value + "님 안녕하세요.";
+            uid.style.display = "none";
+            nameBtn.style.display = "none";
+        });
+
+        todoBtn.addEventListener("click", () => {
+            let li = document.createElement("li");
+            let text = todo.value;
+
+            let delbtn = document.createElement("button");
+            let arrowDown = document.createElement("button");
+            let arrowUp = document.createElement("button");
+            delbtn.textContent = "X";
+            delbtn.type = "button";
+            delbtn.className = "del-btn red-btn";
+            arrowDown.textContent = "↓";
+            arrowDown.className = "arrow-down";
+            arrowDown.type = "button";
+            arrowUp.textContent = "↑";
+            arrowUp.className = "arrow-up";
+            arrowUp.type = "button";
+            
+            li.textContent = text;
+
+            li.appendChild(delbtn);
+            li.appendChild(arrowDown);
+            li.appendChild(arrowUp);
+            todoList.appendChild(li);
+            todo.value = null;
+
+            delbtn.addEventListener("click", function() {
+                this.parentElement.remove();
+            });
+
+            arrowUp.addEventListener("click", () => {
+                let ul = arrowUp.parentElement.parentElement;
+                let current = arrowDown.closest("li");
+                let previous = current.previousElementSibling;
+                if(previous === null ) {
+                    alert("더이상 위로 올리실 수 없습니다.");
+                    return false;
+                }
+                if(confirm('위로 이동하시겠습니까?')) ul.insertBefore(current, previous);
+            });
+
+            arrowDown.addEventListener("click", () => {
+                let ul = arrowDown.closest("ul");
+                let current = arrowDown.closest("li");
+                let next = current.nextElementSibling;
+                if(next === null ) {
+                    alert("더이상 아래로 내리실 수 없습니다.");
+                    return false;
+                }
+                if(confirm('아래로 이동하시겠습니까?')) ul.insertBefore(next, current);
+            });
+        });
+    </script>
+</body>
+</html>

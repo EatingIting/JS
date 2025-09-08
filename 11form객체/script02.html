@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        input {
+            display: block;
+        }
+        input[type="phone"] {
+            margin-bottom: 20px;
+        }
+    </style>
+  </head>
+  <body>
+    <h3>정규표현식 - 특정문자열 패턴을 찾고싶을때</h3>
+    <form action="#" name="actionForm">
+        이메일: <input type="text" name="email">
+        비밀번호: <input type="password" name="pw">
+        휴대폰: <input type="text" name="phone" placeholder="000-1234-1234"><br>
+        <input type="submit" value="정규표현식 검사" onclick="formValidation();">
+    </form>
+    <script>
+        function formValidation() {
+            event.preventDefault();
+            let form = document.actionForm;
+            //이메일형식
+            let regex1 = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            //비밀번호
+            let regex2 = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$/;
+            //휴대폰
+            let regex3 = /^01[0126789]-?\d{3,4}-?\d{4}$/;
+            if(!regex1.test(form.email.value)) {
+                alert("이메일 형식이어야 합니다.");
+                return;
+            } else if(!regex2.test(form.pw.value)) {
+                alert("비밀번호는 8글자 이상, 숫자 문자, 특수문자 포함입니다.");
+                return;
+            } else if(!regex3.test(form.phone.value)) {
+                alert("휴대폰 번호는 10자리 혹은 11자리 이어야 합니다.");
+                return;
+            } else {
+                alert("정규표현식 통과");
+            }
+        }
+    </script>
+  </body>
+</html>

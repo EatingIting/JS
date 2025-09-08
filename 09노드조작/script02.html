@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {list-style: none; margin: 0px auto; padding: 10px 10px; }
+    </style>
+</head>
+<body>
+    <h3>remove - 자기 자신 삭제</h3>
+    
+    <button type="button" id="remove" onclick="this.remove();">자신삭제하기</button>
+
+    <h3>removeChild - 자식삭제</h3>
+
+    <button type="button" id="add" style="width: 115px;">추가하기</button><br><br>
+    <button type="button" id="delfirst">첫번째 자식삭제</button><br><br>
+    <button type="button" id="dellast">마지막 자식삭제</button>
+
+    <ul class="box">
+
+    </ul>
+
+    <script>
+        let box = document.querySelector(".box");
+        let add = document.querySelector("#add");
+        let delFirst = document.querySelector("#delfirst");
+        let dellast = document.querySelector("#dellast");
+        let count = 1;
+        add.addEventListener("click", function () {
+            let li = document.createElement("li");
+            li.textContent = "필요한 값을 추가 " + count++;
+
+            li.addEventListener("dblclick", some)
+
+            box.appendChild(li);
+        });
+
+        //첫번째 자식 삭제
+        delFirst.addEventListener("click", function(){
+
+            if(box.children[0] === undefined) {
+                return;
+            }
+            box.removeChild(box.children[0]);
+        });
+
+        dellast.addEventListener("click", function() {
+            if(box.children[0] === undefined) {
+                return;
+            }
+            box.removeChild(box.children[box.children.length-1]);// box.removeChild(box.lastElementChild) 이것이 더 간편하고 좋음.
+        });
+
+        //더블클릭이벤트
+        function some() {
+            this.remove();
+        }
+    </script>    
+</body>
+</html>

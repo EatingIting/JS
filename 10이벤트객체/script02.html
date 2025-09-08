@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id ="box">
+        <li class = "item">1. 홍길동</li>
+        <li class = "item">2. 홍길자</li>
+        <li class = "item">3. 영숙</li>
+        <li class = "item">4. 철수</li>
+        <li class = "item">5. 영자</li>
+    </ul>
+
+    <p class="result">
+
+    </p>
+
+    <script>
+        //만약 li가 10000개가 넘어간다면? for문이 10000번 돌아야하기 때문에, 효율적이지 못하다.
+        //효율적인 방법 => 이벤트 객체
+        let result = document.querySelector(".result");
+        let box = document.getElementById('box');
+        box.addEventListener("click", (e) => { //li태그의 부모태그인 ul태그에 클릭이벤트를 주면 자식태그를 클릭하여도 이벤트가 동작함.
+            //li를 클릭했을 때, 해당 li태그를 가르킬 필요가 있음.
+            // console.log(e);
+            // console.log(e.target); //이벤트가 실제 동작한 태그
+            // console.log(e.currentTarget); //이벤트가 실제 걸려있는 태그
+            // console.log(e.type);
+            // result.innerHTML = e.target.innerHTML; //ul태그를 누르면 ul밑의 자식들이 한번에 다 뜸
+            //li에서만 이벤트가 동작되게 한다.
+            if(e.target.tagName !== "LI") {
+                return false;
+            }
+            result.innerHTML = e.target.innerHTML;
+            
+        });
+    </script>
+</body>
+</html>

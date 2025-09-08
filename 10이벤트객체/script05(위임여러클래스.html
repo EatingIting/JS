@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {text-decoration: none; list-style: none;}
+    a { color: blue; }
+  </style>
+  <body>
+    <ul class="box">
+      <li>
+        <span>홍길동</span>
+        <a href="#" class="sel">선택</a>
+        <a href="#" class="del">삭제</a>
+      </li>
+      <li>
+        <span>영숙</span>
+        <a href="#" class="sel">선택</a>
+        <a href="#" class="del">삭제</a>
+      </li>
+      <li>
+        <span>영자</span>
+        <a href="#" class="sel">선택</a>
+        <a href="#" class="del">삭제</a>
+      </li>
+      <li>
+        <span>영철</span>
+        <a href="#" class="sel">선택</a>
+        <a href="#" class="del">삭제</a>
+      </li>
+    </ul>
+    <script>
+      let box = document.querySelector(".box");
+      box.addEventListener("click", (e) => {
+        e.preventDefault();
+        if(e.target.tagName !== 'A') return;
+
+        //sel클래스인 경우는 select기능
+        //del클래스인 경우는 delete기능
+
+        // console.log(e.target.className); //클래스명
+        // console.log(e.target.classList); //클래스명을 배열로
+        // console.log(e.target.classList.contains('sel')); //sel명이 포함되어있으면 true값 반환
+        
+        let span = e.target.parentElement.firstElementChild;
+
+        if(e.target.classList.contains('sel')) {
+            //select기능
+            console.log('select버튼');
+            span.style.color = 'red';
+            
+        } else if(e.target.classList.contains('del')) {
+            //delete기능
+            console.log('delete버튼');
+            span.parentElement.remove();
+        }
+
+      });
+    </script>
+  </body>
+</html>

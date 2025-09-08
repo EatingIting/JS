@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      input {
+        display: block;
+        margin-bottom: 10px;
+      }
+      input[type="text"],
+      input[name="pw"] {
+        display: block;
+        margin-bottom: 10px;
+      }
+      input[type="checkbox"] {
+        display: inline-block;
+        margin-bottom: 20px;
+      }
+      label {
+        margin-right: 15px;
+      }
+      input[name="number"] {
+        border-color: none;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="https://www.google.com" name="actionForm">
+      이름: <input type="text" name="name" /> 비밀번호 :
+      <input type="text" name="pw" /> CSS<input type="checkbox" name="check" />
+      HTML<input type="checkbox" name="check" /> JS<input
+        type="checkbox"
+        name="check"
+      />
+      <input type="submit" value="제출하기" id="btn" />
+    </form>
+    <script>
+      //submit 버튼을 누를때 한번에 검사(간단하게)
+      let btn = document.getElementById("btn");
+      btn.addEventListener("click", () => {
+        event.preventDefault(); //event 객체는 매개변수로 받지 않더라도, event문법으로 접근 가능하다.
+        // submit의 고유이벤트 중지.
+        console.log(document.actionForm); //form태그
+        console.log(document.actionForm.name); //name이 name인 input태그
+        let form = document.actionForm; //<- 이거 폼태그
+        if (form.name.value.length < 3) {
+          alert("이름은 3글자 이상입니다.");
+          form.name.focus(); //input태그.focus();
+          return;
+        } else if (form.pw.value.length < 4) {
+          alert("비밀번호는 4글자 이상입니다.");
+          form.pw.focus();
+          return;
+        } else {
+          let checkbox = form.check; //name이 check인 태그
+          let cnt = 0;
+          for (let i in checkbox) {
+            if (checkbox[i].checked) {
+              cnt++;
+            }
+          }
+          if (cnt <= 0) {
+            alert("적어도 1개 이상의 체크박스를 선택하세요.");
+            return;
+          }
+        }
+        form.submit(); //preventDefault로 중단시킨걸 submit메서드로 다시 제출함.
+      });
+    </script>
+    <hr />
+
+    <form action="##" name="numberForm">
+      휴대폰번호 : <input type="text" name="number" />
+      <input type="submit" value="제출하기" id="btn2" />
+    </form>
+    <script>
+      let numberValid = false;
+      let number = document.numberForm.number;
+      number.oninput = function (e) {
+        if (e.target.value === "") {
+          number.style.border = "3px solid red";
+          numberValid = false;
+        } else if (e.target.value.length <= 11) {
+          number.style.border = "3px solid red";
+          numberValid = false;
+        } else {
+          number.style.border = "3px solid green";
+          numberValid = true;
+        }
+      };
+
+      let btn2 = document.getElementById("btn2");
+      btn2.onclick = function () {
+        event.preventDefault();
+        if (numberValid) {
+          document.numberForm.submit();
+        }
+      };
+    </script>
+  </body>
+</html>

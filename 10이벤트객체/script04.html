@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    li { list-style: none; }
+    a { text-decoration: none; color: black;}
+</style>
+<body>
+    <h3>기본 이벤트 중단</h3>
+    
+    <ul class="box">
+        <li><a href="xxxx.html">메뉴1</a></li>
+        <li><a href="xxxx.html">메뉴2</a></li>
+        <li><a href="xxxx.html">메뉴3</a></li>
+        <li><a href="xxxx.html">메뉴4</a></li>
+        <li><a href="xxxx.html">메뉴5</a></li>
+    </ul>
+
+    <script>
+        let box = document.querySelector(".box");
+        box.addEventListener("click", (e) => {
+            e.preventDefault(); //태그가 가지고 있는 기본이벤트를 중단.
+            console.log(e.target.innerHTML);
+        });
+    </script>
+</body>
+</html>
