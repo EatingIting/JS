@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="memo">
+    <button type="button" id="add">로컬스토리지 추가</button>
+
+    <ul class="box">
+
+    </ul>
+
+    <script>
+
+        let memo = document.getElementById("memo");
+        let addBtn = document.getElementById("add");
+        let box = document.querySelector(".box");
+        let arr = [];
+        addBtn.addEventListener("click", () => {
+            debugger;
+            //있는지 없는지 검사 - 있으면 통째로 가져와서 배열 바꿔치기
+            if(localStorage.getItem("memo") !== null){
+                let str = localStorage.getItem("memo");
+                arr = JSON.parse(str); //-> string을 object유형으로 변환
+            }
+            arr.push(memo.value);
+            localStorage.setItem("memo",JSON.stringify(arr));
+            memo.value = '';
+
+            getStorage(); //화면 다시 구성하기
+
+            //세션스토리지 저장
+            // localStorage.setItem("memo",memo.value);
+            // memo.value='';
+            // let text = localStorage.getItem("memo");
+
+
+            //값삭제
+            // localStorage.removeItem("memo"); //선택삭제
+            // localStorage.clear(); //전부삭제
+            
+        });
+
+        function getStorage() {
+            if(localStorage.getItem('memo') !== null) {
+                let arr = JSON.parse(localStorage.getItem('memo'));
+                let str = '';
+                arr.forEach( function (item, index) {
+                    str += "<li onclick='removeStorage("+index+");'>" + item + "</li>";
+                });
+                box.innerHTML = str;
+            }
+        }
+
+        function removeStorage(index) {
+            //arr에서 값을 찾아서 지움.
+            arr.splice(index, 1); //중간에서 삭제
+            localStorage.setItem("memo",JSON.stringify(arr)); //로컬스토리지 갱신
+            getStorage(); //다시 화면 그림
+        }
+
+        (function() {
+            getStorage();
+        })(); //즉시실행함수로 바로 실행
+    </script>
+</body>
+</html>
