@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" id="btn">setInterval중단</button>
+    <button type="button" id="btn2">setTimeout중단</button>
+    <script>
+        let count = 0;
+        let stop = setInterval(()=> {
+            count++;
+            console.log(count + "초");
+        },1000);
+
+        let btn = document.getElementById("btn");
+        btn.addEventListener("click", () => {
+            clearInterval(stop);
+        });
+
+        //timeout
+        let stop2 = setTimeout(() => {
+            alert("5초 뒤에 실행됨. 딱 한번");
+        },5000);
+
+        let btn2 = document.getElementById("btn2");
+        btn2.addEventListener("click", () =>{ 
+            clearTimeout(stop2); //setTimeout 중단.
+        });
+    </script>
+</body>
+</html>
