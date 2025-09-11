@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .list {
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .list > .item {
+            flex-basis: 20%;
+            height: 100px;
+            border: 1px solid #777;
+        }
+        button {
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="list">
+        <!-- <div class="item">
+            <p>좌표:</p>
+            <p>주소:</p>
+        </div> -->
+    </div>
+    <button type="button" id="nextBtn">next</button>
+    <script>
+        const API_KEY = '7455466e66796f703738787352584f';
+        let pageNum = 1;
+        let nextBtn = document.getElementById("nextBtn");
+        nextBtn.addEventListener("click", () => {
+            pageNum++
+            getAjax();
+        });
+        function getAjax() {
+            const END = pageNum * 8;
+            const START = END - 7;
+            fetch(`http://openapi.seoul.go.kr:8088/${API_KEY}/json/TbPublicWifiInfo/${START}/${END}/`)
+            .then(response => response.json())
+            .then(data => {
+                // console.log(data);
+                let result = data.TbPublicWifiInfo.row;
+                let str = '';
+                for(let i in result) {
+                    let lat = result[i].LAT;
+                    let lnt = result[i].LNT;
+                    let addr = result[i].X_SWIFI_ADRES1 +""+result[i].X_SWIFI_ADRES2;
+                    // console.log(lat, lnt, addr);
+                    str += '<div class="item">';
+                    str += '<p>좌표:'+lat+', '+lnt+'</p>';
+                    str += '<p>주소:'+addr+'</p>';
+                    str += '</div>';
+                    document.querySelector('.list').innerHTML = str;
+                }
+                
+            });
+        }
+        (function() {
+            getAjax();
+        })();
+    </script>
+</body>
+</html>
